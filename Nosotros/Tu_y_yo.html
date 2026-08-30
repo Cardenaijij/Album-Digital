@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Álbum Digital</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f4f1eb;
+            color: #292727;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        /* Barra superior */
+        .menu {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px 0;
+            border-bottom: 1px solid #b8b1a7;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #8b8175;
+        }
+
+        /* Contenedor principal */
+        .contenedor {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #faf9f6;
+            border: 1px solid #c8c1b7;
+        }
+
+        /* Encabezado */
+        .encabezado {
+            text-align: center;
+            padding: 70px 20px 50px;
+            border-bottom: 1px solid #c8c1b7;
+        }
+
+        .pequeno {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            font-weight: normal;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .ampersand {
+            font-size: 30px;
+            font-style: italic;
+            margin: 10px;
+            color: #8c8378;
+        }
+
+        .linea {
+            width: 100px;
+            height: 1px;
+            background-color: #aaa29a;
+            margin: 25px auto;
+        }
+
+        .descripcion {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        /* Sección de años */
+        .años {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid #c8c1b7;
+        }
+
+        .año {
+            padding: 45px 20px;
+            text-align: center;
+            border-right: 1px solid #c8c1b7;
+        }
+
+        .año:last-child {
+            border-right: none;
+        }
+
+        .año span {
+            display: block;
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .año p {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        /* Botones */
+        button {
+            background-color: #292929;
+            color: white;
+            border: none;
+            padding: 13px 35px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #8c8378;
+            transform: translateY(-2px);
+        }
+
+        /* Franja oscura */
+        .franja {
+            background-color: #292929;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .franja h2 {
+            font-size: 25px;
+            font-weight: normal;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .franja p {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #d8d3cc;
+        }
+
+        /* Texto inferior */
+        .historia {
+            text-align: center;
+            padding: 60px 25px;
+        }
+
+        .historia h2 {
+            font-size: 30px;
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .historia p {
+            max-width: 550px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* Decoraciones */
+        .decoracion {
+            font-size: 25px;
+            color: #aaa096;
+            margin: 15px;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #292929;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            letter-spacing: 3px;
+        }
+
+        /* Adaptación para celular */
+        @media (max-width: 700px) {
+
+            .menu {
+                gap: 15px;
+                font-size: 9px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .años {
+                grid-template-columns: 1fr;
+            }
+
+            .año {
+                border-right: none;
+                border-bottom: 1px solid #c8c1b7;
+            }
+
+            .año:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+
+
+
+    <!-- CONTENEDOR -->
+    <main class="contenedor">
+
+        <!-- ENCABEZADO -->
+        <section class="encabezado">
+
+            <div class="decoracion">✧</div>
+
+            <div class="pequeno">
+                NUESTROS RECUERDOS
+            </div>
+
+            <h1>ÁLBUM</h1>
+
+            <div class="ampersand">
+                &amp;
+            </div>
+
+            <h1>DIGITAL</h1>
+
+            <div class="linea"></div>
+
+            <p class="descripcion">
+                UNA COLECCIÓN DE MOMENTOS ESPECIALES
+            </p>
+
+            <div class="decoracion">✦</div>
+
+        </section>
+
+
+        <!-- AÑOS -->
+        <section class="años">
+
+            <div class="año">
+
+                <span>2024</span>
+
+                <p>
+                    NUESTROS RECUERDOS
+                </p>
+
+                <a href="2024.html">
+                    <button>
+                        VER ÁLBUM
+                    </button>
+                </a>
+
+            </div>
+
+
+            <div class="año">
+
+                <span>2025</span>
+
+                <p>
+                    NUESTROS RECUERDOS
+                </p>
+
+                <a href="2025.html">
+                    <button>
+                        VER ÁLBUM
+                    </button>
+                </a>
+
+            </div>
+
+
+            <div class="año">
+
+                <span>2026</span>
+
+                <p>
+                    NUESTROS RECUERDOS
+                </p>
+
+                <a href="2026.html">
+                    <button>
+                        VER ÁLBUM
+                    </button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECCIÓN OSCURA -->
+        <section class="franja">
+
+            <h2>LOS MOMENTOS QUE AMAMOS</h2>
+
+            <p>
+                CADA AÑO GUARDA UNA HISTORIA DIFERENTE
+            </p>
+
+        </section>
+
+
+        <!-- HISTORIA -->
+        <section class="historia">
+
+            <div class="decoracion">✧</div>
+
+            <h2>
+                UN VIAJE A TRAVÉS DEL TIEMPO
+            </h2>
+
+            <p>
+                Bienvenido a nuestro álbum digital. Aquí podrás
+                encontrar una colección de momentos, recuerdos
+                y experiencias que hemos guardado a lo largo
+                de los años.
+            </p>
+
+            <div class="decoracion">✦</div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            HECHO CON ♥ PARA GUARDAR NUESTROS RECUERDOS
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
